@@ -1,25 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:krs_to_do/home_empty.dart';
 import 'package:krs_to_do/onboard_2.dart';
-import 'package:krs_to_do/onboard_3.dart';
 
-void main() => runApp(FirstPage());
-
-class FirstPage extends StatefulWidget {
-  const FirstPage({super.key});
+class ThirdPage extends StatefulWidget {
+  const ThirdPage({super.key});
 
   @override
-  State<FirstPage> createState() => _FirstPageState();
+  State<ThirdPage> createState() => _ThirdPageState();
 }
 
-class _FirstPageState extends State<FirstPage> {
-  void _navigatetosecondpage() {
+class _ThirdPageState extends State<ThirdPage> {
+  void _navigateback() {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => SecondPage()));
+        context, MaterialPageRoute(builder: ((context) => const SecondPage())));
   }
 
-  void _navigatetolast() {
+  void _navigatetomain() {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => ThirdPage()));
+        context, MaterialPageRoute(builder: (context) => const HomeEmpty()));
   }
 
   @override
@@ -31,15 +29,15 @@ class _FirstPageState extends State<FirstPage> {
         children: [
           Container(
               alignment: Alignment.topLeft,
-              child: TextButton(
-                  onPressed: _navigatetolast,
-                  child: const Text(
+              child: const TextButton(
+                  onPressed: null,
+                  child: Text(
                     "SKIP",
                     style: TextStyle(color: Color.fromARGB(159, 255, 255, 255)),
                   ))),
           const Center(
             child: Image(
-                image: AssetImage('assets/Group 182.png'),
+                image: AssetImage('assets/Frame 161.png'),
                 width: 213,
                 height: 277.78),
           ),
@@ -47,7 +45,7 @@ class _FirstPageState extends State<FirstPage> {
             height: 5,
           ),
           const Image(
-            image: AssetImage('assets/NAV.png'),
+            image: AssetImage('assets/NAV_3.png'),
             width: 94.83,
             height: 4,
           ),
@@ -55,15 +53,15 @@ class _FirstPageState extends State<FirstPage> {
             height: 5,
           ),
           const Text(
-            "Manage your tasks",
+            "Orgonaize your tasks",
             style: TextStyle(
                 fontSize: 32, fontWeight: FontWeight.w700, color: Colors.white),
           ),
           Container(
-            width: 269,
+            width: 299,
             child: const Text(
               textAlign: TextAlign.center,
-              "You can easily manage all of your daily tasks in DoMe for free",
+              "You can organize your daily tasks by adding your tasks into separate categories",
               style: TextStyle(
                 color: Color.fromARGB(
                   201,
@@ -79,16 +77,16 @@ class _FirstPageState extends State<FirstPage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const TextButton(
-                  onPressed: null,
-                  child: Text(
+                TextButton(
+                  onPressed: _navigateback,
+                  child: const Text(
                     "Back",
                     style: TextStyle(
                         color: Color.fromARGB(94, 255, 255, 255), fontSize: 16),
                   ),
                 ),
                 ElevatedButton(
-                    onPressed: _navigatetosecondpage,
+                    onPressed: _navigatetomain,
                     style: ButtonStyle(
                         backgroundColor:
                             MaterialStateProperty.all(const Color(0xff8875ff)),
@@ -97,7 +95,7 @@ class _FirstPageState extends State<FirstPage> {
                                 borderRadius: BorderRadius.zero,
                                 side: BorderSide(color: Color(0xff8875ff))))),
                     child: const Text(
-                      "Next",
+                      "Get Started",
                       style: TextStyle(fontSize: 16, color: Colors.white),
                     ))
               ],

@@ -1,25 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:krs_to_do/onboard_2.dart';
+import 'package:krs_to_do/onboard_1.dart';
 import 'package:krs_to_do/onboard_3.dart';
 
-void main() => runApp(FirstPage());
-
-class FirstPage extends StatefulWidget {
-  const FirstPage({super.key});
+class SecondPage extends StatefulWidget {
+  const SecondPage({super.key});
 
   @override
-  State<FirstPage> createState() => _FirstPageState();
+  State<SecondPage> createState() => _SecondPageState();
 }
 
-class _FirstPageState extends State<FirstPage> {
-  void _navigatetosecondpage() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => SecondPage()));
-  }
-
+class _SecondPageState extends State<SecondPage> {
   void _navigatetolast() {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => ThirdPage()));
+        context, MaterialPageRoute(builder: (context) => const ThirdPage()));
+  }
+
+  void _navigateback() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: ((context) => const FirstPage())));
   }
 
   @override
@@ -39,7 +37,7 @@ class _FirstPageState extends State<FirstPage> {
                   ))),
           const Center(
             child: Image(
-                image: AssetImage('assets/Group 182.png'),
+                image: AssetImage('assets/Frame 162.png'),
                 width: 213,
                 height: 277.78),
           ),
@@ -47,7 +45,7 @@ class _FirstPageState extends State<FirstPage> {
             height: 5,
           ),
           const Image(
-            image: AssetImage('assets/NAV.png'),
+            image: AssetImage('assets/NAV_2.png'),
             width: 94.83,
             height: 4,
           ),
@@ -55,7 +53,7 @@ class _FirstPageState extends State<FirstPage> {
             height: 5,
           ),
           const Text(
-            "Manage your tasks",
+            "Create Daily Routine",
             style: TextStyle(
                 fontSize: 32, fontWeight: FontWeight.w700, color: Colors.white),
           ),
@@ -63,7 +61,7 @@ class _FirstPageState extends State<FirstPage> {
             width: 269,
             child: const Text(
               textAlign: TextAlign.center,
-              "You can easily manage all of your daily tasks in DoMe for free",
+              "In Uptodo you can create your personalized routine to stay productive",
               style: TextStyle(
                 color: Color.fromARGB(
                   201,
@@ -79,16 +77,16 @@ class _FirstPageState extends State<FirstPage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const TextButton(
-                  onPressed: null,
-                  child: Text(
+                TextButton(
+                  onPressed: _navigateback,
+                  child: const Text(
                     "Back",
                     style: TextStyle(
                         color: Color.fromARGB(94, 255, 255, 255), fontSize: 16),
                   ),
                 ),
                 ElevatedButton(
-                    onPressed: _navigatetosecondpage,
+                    onPressed: _navigatetolast,
                     style: ButtonStyle(
                         backgroundColor:
                             MaterialStateProperty.all(const Color(0xff8875ff)),
