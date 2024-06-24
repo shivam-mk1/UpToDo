@@ -67,7 +67,17 @@ flutter:
     - assets/Frame 162.png
     - assets/Frame 161.png
     - assets/NAV_3.png
-
+    - assets/Group 167.png
+    - assets/home.png
+    - assets/calendar.png
+    - assets/clock.png
+    - assets/user.png
+    - assets/rafiki.png
+    - assets/sort.png
+    - assets/KRS.jpg
+    - assets/calendar_fill.png
+    - assets/clock_fill.png
+    - assets/home_empty.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

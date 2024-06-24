@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:krs_to_do/calendarscreen.dart';
 import 'package:krs_to_do/focus.dart';
+import 'package:krs_to_do/home_empty.dart';
 import 'package:krs_to_do/profile.dart';
 
-class HomeEmpty extends StatefulWidget {
-  const HomeEmpty({super.key});
+class Calendar extends StatefulWidget {
+  const Calendar({super.key});
 
   @override
-  State<HomeEmpty> createState() => _HomeEmptyState();
+  State<Calendar> createState() => _CalendarState();
 }
 
-class _HomeEmptyState extends State<HomeEmpty> {
-  void _gotocalendar() {
+class _CalendarState extends State<Calendar> {
+  void _gotohome() {
     Navigator.push(
-        context, MaterialPageRoute(builder: ((context) => const Calendar())));
+        context, MaterialPageRoute(builder: ((context) => const HomeEmpty())));
   }
 
   void _gotofocus() {
@@ -29,62 +29,6 @@ class _HomeEmptyState extends State<HomeEmpty> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 45, horizontal: 15),
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                IconButton(
-                    onPressed: () {},
-                    icon: const Image(
-                      image: AssetImage('assets/sort.png'),
-                    )),
-                const Text(
-                  'Index',
-                  style: TextStyle(color: Colors.white, fontSize: 20),
-                ),
-                const CircleAvatar(
-                  backgroundColor: Colors.transparent,
-                  radius: 22,
-                  backgroundImage: AssetImage('assets/KRS.jpg'),
-                )
-              ],
-            ),
-            const SizedBox(
-              height: 80,
-            ),
-            const Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image(
-                  image: AssetImage('assets/rafiki.png'),
-                  width: 227,
-                  height: 227,
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                Text(
-                  'What do you want to do today?',
-                  //   textAlign: /,
-                  style: TextStyle(
-                      color: Color.fromARGB(201, 255, 255, 255), fontSize: 20),
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                Text(
-                  'Tap + to add your tasks',
-                  style: TextStyle(
-                      color: Color.fromARGB(210, 255, 255, 255), fontSize: 16),
-                )
-              ],
-            ),
-          ],
-        ),
-      ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         enableFeedback: true,
@@ -106,11 +50,12 @@ class _HomeEmptyState extends State<HomeEmpty> {
           children: [
             Row(
               children: [
-                const Column(children: [
+                Column(children: [
                   IconButton(
-                      onPressed: null,
-                      icon: Image(image: AssetImage('assets/home.png'))),
-                  Text(
+                      onPressed: _gotohome,
+                      icon: const Image(
+                          image: AssetImage('assets/home_empty.png'))),
+                  const Text(
                     "Index",
                     style: TextStyle(fontSize: 12, color: Colors.white),
                   )
@@ -118,12 +63,12 @@ class _HomeEmptyState extends State<HomeEmpty> {
                 const SizedBox(
                   width: 35,
                 ),
-                Column(children: [
+                const Column(children: [
                   IconButton(
-                      onPressed: _gotocalendar,
-                      icon: const Image(
-                          image: AssetImage('assets/calendar.png'))),
-                  const Text(
+                      onPressed: null,
+                      icon:
+                          Image(image: AssetImage('assets/calendar_fill.png'))),
+                  Text(
                     "Calendar",
                     style: TextStyle(fontSize: 12, color: Colors.white),
                   )

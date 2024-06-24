@@ -11,9 +11,6 @@ class ToDo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Splash(),
-    );
+    return const MaterialApp(debugShowCheckedModeBanner: false, home: Splash());
   }
 }
