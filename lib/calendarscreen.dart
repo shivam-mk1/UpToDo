@@ -46,63 +46,56 @@ class _CalendarState extends State<Calendar> {
         height: 90,
         color: const Color(0xff363636),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Row(
-              children: [
-                Column(children: [
-                  IconButton(
-                      onPressed: _gotohome,
-                      icon: const Image(
-                          image: AssetImage('assets/home_empty.png'))),
-                  const Text(
-                    "Index",
-                    style: TextStyle(fontSize: 12, color: Colors.white),
-                  )
-                ]),
-                const SizedBox(
-                  width: 35,
-                ),
-                const Column(children: [
-                  IconButton(
-                      onPressed: null,
-                      icon:
-                          Image(image: AssetImage('assets/calendar_fill.png'))),
-                  Text(
-                    "Calendar",
-                    style: TextStyle(fontSize: 12, color: Colors.white),
-                  )
-                ])
-              ],
+            Column(children: [
+              IconButton(
+                  onPressed: _gotohome,
+                  icon:
+                      const Image(image: AssetImage('assets/home_empty.png'))),
+              const Text(
+                "Index",
+                style: TextStyle(fontSize: 12, color: Colors.white),
+              )
+            ]),
+            const Spacer(
+              flex: 1,
             ),
-            Row(
-              children: [
-                Column(children: [
-                  IconButton(
-                      onPressed: _gotofocus,
-                      icon: const Image(image: AssetImage('assets/clock.png'))),
-                  const Text(
-                    "Focus",
-                    style: TextStyle(fontSize: 12, color: Colors.white),
-                  )
-                ]),
-                const SizedBox(
-                  width: 35,
-                ),
-                Column(children: [
-                  IconButton(
-                      onPressed: _gotoprofile,
-                      icon: const Image(image: AssetImage('assets/user.png'))),
-                  const Text(
-                    "Profile",
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: Colors.white,
-                    ),
-                  )
-                ])
-              ],
+            const Column(children: [
+              IconButton(
+                  onPressed: null,
+                  icon: Image(image: AssetImage('assets/calendar_fill.png'))),
+              Text(
+                "Calendar",
+                style: TextStyle(fontSize: 12, color: Colors.white),
+              )
+            ]),
+            const Spacer(
+              flex: 2,
             ),
+            Column(children: [
+              IconButton(
+                  onPressed: _gotofocus,
+                  icon: const Image(image: AssetImage('assets/clock.png'))),
+              const Text(
+                "Focus",
+                style: TextStyle(fontSize: 12, color: Colors.white),
+              )
+            ]),
+            const Spacer(
+              flex: 1,
+            ),
+            Column(children: [
+              IconButton(
+                  onPressed: _gotoprofile,
+                  icon: const Image(image: AssetImage('assets/user.png'))),
+              const Text(
+                "Profile",
+                style: TextStyle(
+                  fontSize: 12,
+                  color: Colors.white,
+                ),
+              )
+            ])
           ],
         ),
       ),
