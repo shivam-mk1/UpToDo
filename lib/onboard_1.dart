@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:krs_to_do/onboard_2.dart';
-import 'package:krs_to_do/onboard_3.dart';
 
-void main() => runApp(FirstPage());
+void main() => runApp(const FirstPage());
 
 class FirstPage extends StatefulWidget {
   const FirstPage({super.key});
@@ -13,30 +11,29 @@ class FirstPage extends StatefulWidget {
 
 class _FirstPageState extends State<FirstPage> {
   void _navigatetosecondpage() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => SecondPage()));
+    Navigator.pushNamed(context, '/onboard2');
   }
 
   void _navigatetolast() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => ThirdPage()));
+    Navigator.pushNamed(context, '/onboard3');
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        leading: TextButton(
+            onPressed: _navigatetolast,
+            child: const Text(
+              "SKIP",
+              style: TextStyle(color: Color.fromARGB(159, 255, 255, 255)),
+            )),
+      ),
       backgroundColor: Colors.black,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Container(
-              alignment: Alignment.topLeft,
-              child: TextButton(
-                  onPressed: _navigatetolast,
-                  child: const Text(
-                    "SKIP",
-                    style: TextStyle(color: Color.fromARGB(159, 255, 255, 255)),
-                  ))),
           const Center(
             child: Image(
                 image: AssetImage('assets/Group 182.png'),
@@ -59,9 +56,9 @@ class _FirstPageState extends State<FirstPage> {
             style: TextStyle(
                 fontSize: 32, fontWeight: FontWeight.w700, color: Colors.white),
           ),
-          Container(
+          const SizedBox(
             width: 269,
-            child: const Text(
+            child: Text(
               textAlign: TextAlign.center,
               "You can easily manage all of your daily tasks in DoMe for free",
               style: TextStyle(

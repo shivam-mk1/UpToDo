@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:krs_to_do/home_empty.dart';
-import 'package:krs_to_do/onboard_2.dart';
 
 class ThirdPage extends StatefulWidget {
   const ThirdPage({super.key});
@@ -11,30 +9,29 @@ class ThirdPage extends StatefulWidget {
 
 class _ThirdPageState extends State<ThirdPage> {
   void _navigateback() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: ((context) => const SecondPage())));
+    Navigator.pushNamed(context, '/onboard2');
   }
 
   void _navigatetomain() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const HomeEmpty()));
+    Navigator.pushNamed(context, '/loginfirst');
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        leading: const TextButton(
+            onPressed: null,
+            child: Text(
+              "SKIP",
+              style: TextStyle(color: Color.fromARGB(159, 255, 255, 255)),
+            )),
+      ),
       backgroundColor: Colors.black,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Container(
-              alignment: Alignment.topLeft,
-              child: const TextButton(
-                  onPressed: null,
-                  child: Text(
-                    "SKIP",
-                    style: TextStyle(color: Color.fromARGB(159, 255, 255, 255)),
-                  ))),
           const Center(
             child: Image(
                 image: AssetImage('assets/Frame 161.png'),
@@ -53,7 +50,7 @@ class _ThirdPageState extends State<ThirdPage> {
             height: 5,
           ),
           const Text(
-            "Orgonaize your tasks",
+            "Organzize your tasks",
             style: TextStyle(
                 fontSize: 32, fontWeight: FontWeight.w700, color: Colors.white),
           ),

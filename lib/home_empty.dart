@@ -29,59 +29,59 @@ class _HomeEmptyState extends State<HomeEmpty> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 45, horizontal: 15),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        leading: IconButton(
+          onPressed: () {},
+          icon: const Image(
+            image: AssetImage('assets/sort.png'),
+          ),
+        ),
+        title: const Text(
+          'Index',
+          style: TextStyle(
+              color: Colors.white, fontSize: 20, fontWeight: FontWeight.w400),
+        ),
+        centerTitle: true,
+        actions: const [
+          Padding(
+            padding: EdgeInsets.only(right: 10),
+            child: CircleAvatar(
+              backgroundColor: Colors.transparent,
+              radius: 22,
+              backgroundImage: AssetImage('assets/KRS.jpg'),
+            ),
+          )
+        ],
+      ),
+      body: const Center(
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                IconButton(
-                    onPressed: () {},
-                    icon: const Image(
-                      image: AssetImage('assets/sort.png'),
-                    )),
-                const Text(
-                  'Index',
-                  style: TextStyle(color: Colors.white, fontSize: 20),
-                ),
-                const CircleAvatar(
-                  backgroundColor: Colors.transparent,
-                  radius: 22,
-                  backgroundImage: AssetImage('assets/KRS.jpg'),
-                )
-              ],
+            Padding(
+              padding: EdgeInsets.only(top: 40),
+              child: Image(
+                image: AssetImage('assets/rafiki.png'),
+                width: 227,
+                height: 227,
+              ),
             ),
-            const SizedBox(
-              height: 80,
+            Padding(
+              padding: EdgeInsets.only(top: 20),
+              child: Text(
+                'What do you want to do today?',
+                //   textAlign: /,
+                style: TextStyle(
+                    color: Color.fromARGB(201, 255, 255, 255), fontSize: 20),
+              ),
             ),
-            const Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image(
-                  image: AssetImage('assets/rafiki.png'),
-                  width: 227,
-                  height: 227,
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                Text(
-                  'What do you want to do today?',
-                  //   textAlign: /,
-                  style: TextStyle(
-                      color: Color.fromARGB(201, 255, 255, 255), fontSize: 20),
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                Text(
-                  'Tap + to add your tasks',
-                  style: TextStyle(
-                      color: Color.fromARGB(210, 255, 255, 255), fontSize: 16),
-                )
-              ],
-            ),
+            Padding(
+              padding: EdgeInsets.only(top: 10),
+              child: Text(
+                'Tap + to add your tasks',
+                style: TextStyle(
+                    color: Color.fromARGB(210, 255, 255, 255), fontSize: 16),
+              ),
+            )
           ],
         ),
       ),
@@ -161,6 +161,38 @@ class _HomeEmptyState extends State<HomeEmpty> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class ToDoAppBar extends StatefulWidget {
+  const ToDoAppBar({super.key});
+
+  @override
+  State<ToDoAppBar> createState() => _ToDoAppBarState();
+}
+
+class _ToDoAppBarState extends State<ToDoAppBar> {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        IconButton(
+            onPressed: () {},
+            icon: const Image(
+              image: AssetImage('assets/sort.png'),
+            )),
+        const Text(
+          'Index',
+          style: TextStyle(color: Colors.white, fontSize: 20),
+        ),
+        const CircleAvatar(
+          backgroundColor: Colors.transparent,
+          radius: 22,
+          backgroundImage: AssetImage('assets/KRS.jpg'),
+        )
+      ],
     );
   }
 }

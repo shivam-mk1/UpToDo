@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:krs_to_do/onboard_1.dart';
-import 'package:krs_to_do/onboard_3.dart';
 
 class SecondPage extends StatefulWidget {
   const SecondPage({super.key});
@@ -11,30 +9,29 @@ class SecondPage extends StatefulWidget {
 
 class _SecondPageState extends State<SecondPage> {
   void _navigatetolast() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const ThirdPage()));
+    Navigator.pushNamed(context, '/onboard3');
   }
 
   void _navigateback() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: ((context) => const FirstPage())));
+    Navigator.pushNamed(context, '/onboard1');
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        leading: TextButton(
+            onPressed: _navigatetolast,
+            child: const Text(
+              "SKIP",
+              style: TextStyle(color: Color.fromARGB(159, 255, 255, 255)),
+            )),
+      ),
       backgroundColor: Colors.black,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Container(
-              alignment: Alignment.topLeft,
-              child: TextButton(
-                  onPressed: _navigatetolast,
-                  child: const Text(
-                    "SKIP",
-                    style: TextStyle(color: Color.fromARGB(159, 255, 255, 255)),
-                  ))),
           const Center(
             child: Image(
                 image: AssetImage('assets/Frame 162.png'),
