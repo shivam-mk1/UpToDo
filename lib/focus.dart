@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:krs_to_do/calendarscreen.dart';
 import 'package:krs_to_do/home_empty.dart';
 import 'package:krs_to_do/profile.dart';
 
@@ -16,11 +15,6 @@ class _FocusScreenState extends State<FocusScreen> {
         context, MaterialPageRoute(builder: ((context) => const HomeEmpty())));
   }
 
-  void _gotocalendar() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: ((context) => const Calendar())));
-  }
-
   void _gotoprofile() {
     Navigator.push(context,
         MaterialPageRoute(builder: (context) => const ProfileScreen()));
@@ -29,7 +23,6 @@ class _FocusScreenState extends State<FocusScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         enableFeedback: true,
         shape: const CircleBorder(side: BorderSide.none, eccentricity: 0),
@@ -57,21 +50,7 @@ class _FocusScreenState extends State<FocusScreen> {
                 style: TextStyle(fontSize: 12, color: Colors.white),
               )
             ]),
-            const Spacer(
-              flex: 1,
-            ),
-            Column(children: [
-              IconButton(
-                  onPressed: _gotocalendar,
-                  icon: const Image(image: AssetImage('assets/calendar.png'))),
-              const Text(
-                "Calendar",
-                style: TextStyle(fontSize: 12, color: Colors.white),
-              )
-            ]),
-            const Spacer(
-              flex: 2,
-            ),
+            const Spacer(),
             const Column(children: [
               IconButton(
                   onPressed: null,
@@ -81,9 +60,7 @@ class _FocusScreenState extends State<FocusScreen> {
                 style: TextStyle(fontSize: 12, color: Colors.white),
               )
             ]),
-            const Spacer(
-              flex: 1,
-            ),
+            const Spacer(),
             Column(children: [
               IconButton(
                   onPressed: _gotoprofile,

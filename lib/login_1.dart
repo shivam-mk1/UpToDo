@@ -14,6 +14,7 @@ class _LoginFirstState extends State<LoginFirst> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         leading: IconButton(

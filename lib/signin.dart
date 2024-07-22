@@ -13,6 +13,7 @@ class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           leading: IconButton(
@@ -44,6 +45,7 @@ class _SignInState extends State<SignIn> {
                 clipBehavior: Clip.none,
                 children: [
                   TextField(
+                      keyboardType: TextInputType.name,
                       cursorColor: Colors.white,
                       style: const TextStyle(
                           color: Colors.white,
@@ -80,7 +82,7 @@ class _SignInState extends State<SignIn> {
                 clipBehavior: Clip.none,
                 children: [
                   TextField(
-                      keyboardType: TextInputType.name,
+                      keyboardType: TextInputType.visiblePassword,
                       cursorColor: Colors.white,
                       style: const TextStyle(
                           color: Colors.white,
